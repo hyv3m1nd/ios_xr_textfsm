@@ -1,0 +1,10 @@
+Value Filldown TC (\d+)
+Value sq_buff_counter (\d+)
+Value sq_state (\d+)
+
+Start
+  ^PFC Port SQ counters: -> PFC_Port_SQ_counters
+
+PFC_Port_SQ_counters
+  ^\s+$TC\s+$sq_buff_counter\s+$sq_state -> Record
+

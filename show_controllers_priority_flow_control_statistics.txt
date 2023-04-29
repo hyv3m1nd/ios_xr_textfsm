@@ -1,0 +1,14 @@
+Value interface (\S+)
+Value Total_Rx_PFC_Frames (\d+)
+Value Total_Tx_PFC_Frames (\d+)
+Value Total_Rx_Dropped_Data_Frames (\d+)
+Value List CoS_Status (\S+)
+Value List CoS_Rx_PFC_Frames (\d+)
+Value List CoS_Tx_PFC_Frames (\d+)
+
+Start
+  ^Priority flow control information for interface $interface:
+  ^\s+Total Rx PFC Frames\s*:\s+$Total_Rx_PFC_Frames
+  ^\s+Total Tx PFC Frames\s*:\s+$Total_Tx_PFC_Frames
+  ^\s+Total Rx Dropped Data Frames:\s*$Total_Rx_Dropped_Data_Frames
+  ^\s+\d+\s+$CoS_Status\s+$CoS_Rx_PFC_Frames\s+$CoS_Tx_PFC_Frames

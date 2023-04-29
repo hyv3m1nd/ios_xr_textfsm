@@ -1,0 +1,10 @@
+Value trap_type ([a-zA-Z0-9_\(\)\s]+)
+Value npu_id (\d+)
+Value trap_id (\d+)
+Value trapstats_id (\S+)
+Value policer (\d+)
+Value pkt_accepted (\d+)
+Value pkt_dropped (\d+)
+
+Start
+  ^${trap_type}\s+${npu_id}\s+${trap_id}\s+${trapstats_id}\s+${policer}\s+${pkt_accepted}\s+${pkt_dropped} -> Record

@@ -1,0 +1,19 @@
+Value interface (\S+)
+Value Watchdog_Events ([\d\s]+)
+Value Shutdown_Events ([\d\s]+)
+Value Auto_Restore_Events ([\d\s]+)
+Value SAR_Events ([\d\s]+)
+Value SAR_Instantaneous_Events ([\d\s]+)
+Value Total_Dropped_Packets ([\d\s]+)
+Value Dropped_Packets ([\d\s]+)
+
+
+Start
+  ^Priority flow control information for interface $interface:
+  ^Watchdog Events\s+:\s+$Watchdog_Events
+  ^Shutdown Events\s+:\s+$Shutdown_Events
+  ^Auto Restore Events\s+:\s+$Auto_Restore_Events
+  ^SAR Events\s+:\s+$SAR_Events
+  ^SAR Instantaneous Events\s+:\s+$SAR_Instantaneous_Events
+  ^Total Dropped Packets\s+:\s+$Total_Dropped_Packets
+  ^Dropped Packets\s+:\s+$Dropped_Packets

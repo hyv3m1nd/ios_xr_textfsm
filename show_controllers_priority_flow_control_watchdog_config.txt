@@ -1,0 +1,10 @@
+Value Filldown interface (\S+)
+Value Filldown Configuration_Item (\w.+\w)
+Value Required Global (\S+)
+Value Required Interface (\S+)
+Value Required Effective (\S+)
+
+Start
+  ^Priority flow control information for interface $interface:\s*
+  ^.*\s+:\s+.* -> Continue.Record
+  ^\s*$Configuration_Item\s+:\s+$Global+\s+$Interface+\s+$Effective

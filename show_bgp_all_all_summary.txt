@@ -1,0 +1,48 @@
+Value Address_family (.+)
+Value BGP_router_id (\S+)
+Value Local_AS_num (\S+)
+Value BGP_generic_scan_interval (\S+)
+Value non_stop_routing (\S+)
+Value BGP_table_state (\S+)
+Value Table_id (\S+)
+Value RD_ver (\S+)
+Value BGP_main_table_ver (\S+)
+Value BGP_NSR_initial_initsync_ver (\S+)
+Value BGP_NSR_sync_grp_ver (\S+)
+Value BGP_ISSU_sync_grp_ver (\S+)
+Value BGP_scan_interval (\S+)
+Value BGP_operating_mode (\S+)
+Value Process (\w+)
+Value RcvTblVer (\d+)
+Value bRIB_RIB (\d+)
+Value LabelVer (\d+)
+Value ImportVer (\d+)
+Value SendTblVer (\d+)
+Value StandbyVer (\d+)
+Value Neighbor (\S+)
+Value Spk (\d+)
+Value AS (\d+)
+Value MsgRcvd (\d+)
+Value MsgSent (\d+)
+Value TblVer (\d+)
+Value InQ (\d+)
+Value OutQ (\d+)
+Value Up_Down (\S+)
+Value St_PfxRcd (\S+)
+
+
+Start
+  ^Address Family: ${Address_family}
+  ^BGP router identifier ${BGP_router_id}, local AS number ${Local_AS_num}
+  ^BGP generic scan interval ${BGP_generic_scan_interval} secs
+  ^Non-stop routing is ${non_stop_routing}
+  ^BGP table state: ${BGP_table_state}
+  ^Table ID: ${Table_id}   RD version: ${RD_ver}
+  ^BGP main routing table version ${BGP_main_table_ver}
+  ^BGP NSR Initial initsync version ${BGP_NSR_initial_initsync_ver} \(Reached\)
+  ^BGP NSR/ISSU Sync-Group versions ${BGP_NSR_sync_grp_ver}/${BGP_ISSU_sync_grp_ver}
+  ^BGP scan interval ${BGP_scan_interval} secs
+  ^BGP is operating in ${BGP_operating_mode} mode.
+  ^${Process}\s+${RcvTblVer}\s+${bRIB_RIB}\s+${LabelVer}\s+${ImportVer}\s+${SendTblVer}\s+${StandbyVer}
+  ^${Neighbor}\s+${Spk}\s+${AS}\s+${MsgRcvd}\s+${MsgSent}\s+${TblVer}\s+${InQ}\s+${OutQ}\s+${Up_Down}\s+${St_PfxRcd} -> Record
+

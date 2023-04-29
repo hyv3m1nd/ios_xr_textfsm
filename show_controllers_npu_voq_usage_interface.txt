@@ -1,0 +1,16 @@
+Value intf_name ([A-Za-z0-9\/]+)
+Value intf_handle (\S+)
+Value asic_inst (\S+)
+Value npu (\S+)
+Value npu_core (\S+)
+Value pp_port (\S+)
+Value sys_port (\S+)
+Value voq_base (\S+)
+Value flow_base (\S+)
+Value voq_port_type (\S+)
+Value port_speed (\d+)
+
+Start
+  ^${intf_name}\s+${intf_handle}\s+${asic_inst}\s+${npu}\s+${npu_core}\s+${pp_port}\s+${sys_port}\s+${voq_base}\s+${flow_base}\s+${voq_port_type}\s+${port_speed} -> Record
+
+

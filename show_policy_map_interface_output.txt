@@ -1,0 +1,40 @@
+Value Filldown Interface (\S+\d+/\d+/\d+/\d+)
+Value Filldown Policy (\S+)
+Value Filldown Class (\S+)
+Value Required Matched_packets (\d+)
+Value Matched_bytes (\d+)
+Value Matched_kbps (\d+)
+Value Transmitted_packets (\d+)
+Value Transmitted_bytes (\d+)
+Value Transmitted_kbps (\d+)
+Value Total_dropped_packets (\d+)
+Value Total_dropped_bytes (\d+)
+Value Total_dropped_kbps (\d+)
+Value Queue_id (\d+)
+Value Taildropped_packets (\d+)
+Value Taildropped_bytes (\d+)
+Value RED_transmitted_packets (\d+)
+Value RED_transmitted_bytes (\d+)
+Value RED_random_drops_packets (\d+)
+Value RED_random_drops_bytes (\d+)
+Value maxthreshold_drops_packets (\d+)
+Value maxthreshold_drops_bytes (\d+)
+Value RED_ecn_marked_transmitted_packets (\d+)
+Value RED_ecn_marked_transmitted_bytes (\d+)
+
+Start
+  ^\s*$Interface output: $Policy
+  ^\s*Policy -> Continue.Record
+  ^\s*Policy $Policy Class $Class
+  ^\s*Class -> Continue.Record
+  ^\s*Class $Class
+  ^\s+Matched\s*:\s*$Matched_packets/$Matched_bytes\s+$Matched_kbps
+  ^\s+Transmitted\s*:\s*$Transmitted_packets/$Transmitted_bytes\s+$Transmitted_kbps
+  ^\s+Total Dropped\s*:\s*$Total_dropped_packets/$Total_dropped_bytes\s+$Total_dropped_kbps
+  ^\s+Queue ID\s*:\s*$Queue_id
+  ^\s+Taildropped\s*\(packets/bytes\)\s*:\s*$Taildropped_packets/$Taildropped_bytes
+  ^\s+RED Transmitted \(packets/bytes\)\s*:\s*$RED_transmitted_packets/$RED_transmitted_bytes
+  ^\s+RED random drops\(packets/bytes\)\s*:\s*$RED_random_drops_packets/$RED_random_drops_bytes
+  ^\s+RED maxthreshold drops\(packets/bytes\)\s*:\s*$maxthreshold_drops_packets/$RED_random_drops_bytes
+  ^\s+RED ecn marked & transmitted\(packets/bytes\)\s*:\s*$RED_ecn_marked_transmitted_packets/$RED_ecn_marked_transmitted_bytes
+

@@ -1,0 +1,19 @@
+Value Filldown Time (\w{3}\s+\w{3}\s+\d{1,2}\s+\d{1,2}:\d{1,2}:\d{1,2}\.\d{3}\s+\w{3})
+Value Filldown Node ([a-zA-Z0-9/]+)
+Value Filldown Module (\w+)
+Value Required Dropname (.+?)
+Value Required Dropcount (\d+)
+						
+Start
+  ^$Time
+  ^\s*$Dropname\s*: $Dropcount -> Record
+  ^----------------------------------------------- -> NodeName
+  ^------------------- -> ModuleName
+
+NodeName
+  ^Printing Drop Counters for node $Node
+  ^----------------------------------------------- -> Start
+
+ModuleName
+  ^MODULE $Module
+  ^------------------- -> Start

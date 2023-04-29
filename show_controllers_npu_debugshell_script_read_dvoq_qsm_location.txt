@@ -1,0 +1,9 @@
+Value Node_ID ([\d\w/]+)
+Value Executing_User_File (\S+)
+Value number_of_non_empty_Qs ([\d]+)
+
+Start
+  ^Node ID: $Node_ID
+  ^Executing User File: $Executing_User_File
+  ^number of non-empty Qs = $number_of_non_empty_Qs -> Record
+
