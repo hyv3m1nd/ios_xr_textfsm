@@ -1,0 +1,13 @@
+Value Required Interface_Abridged ([A-Z]+\d+/\d+/\d+/\d+)
+Value Interface_Handle (\S+)
+Value NPU (\d+)
+Value Slice (\d+)
+Value IFG (\d+)
+Value Port (\d+)
+Value VOQ_Base (\d+)
+Value Flow_Base (\d+)
+Value VOQ_Port_Type (\S+)
+Value Port_Speed (\d+\D+)
+
+Start
+  ^\s*$Interface_Abridged\s+$Interface_Handle\s+$NPU\s+$Slice\s+$IFG\s+$Port\s+$VOQ_Base\s+$Flow_Base\s+$VOQ_Port_Type\s+$Port_Speed -> Record
